@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Siemreap&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        * {
+            font-family: "Poppins", serif;
+        }
+
+        .home-page{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+        }
+        .navbar-custome{
+            width: 70%;
+            height: 60px;
+            margin: auto;
+        }
+        
+        .nav-parent{
+            width: 100%;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .Best-selling{
+            width: 70dvw;
+            margin: auto;
+        }
+
+        
+
+        /* Carousel container */
+        .carousel-container {
+            width: 100%;
+            height: 650px;
+            margin-top: 60px;
+        }
+        .carousel-inner {
+            width: 70%;
+            max-height: 100%;
+            margin: auto;
+        }
+        .carousel-inner .carousel-item {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Carousel item styling */
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .category, .new-product {
+            width: 70%;
+            margin: auto;
+        }
+       
+
+        /* Adjust carousel for small screens */
+        @media (max-width: 768px) {
+            .home-page{
+                height: fit-content;
+            }
+            .navbar-custome{
+                width: 100%;
+            }
+            .carousel-container {
+                width: 100%;
+                height: 40vh;
+                padding: 0;
+            }
+            .carousel-inner{
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                width: 100%;
+                height: 30vh;
+            }
+
+        }
+
+        /* Carousel indicators styling */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px; /* Position it at the bottom of the carousel */
+            left: 50%;
+        }
+
+        .carousel-indicators button {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            background-color: rgba(255, 255, 255, 1); /* Solid white for active indicator */
+        }
+
+        .carousel-indicators button:hover {
+            background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+            transform: scale(1.2); /* Enlarge on hover */
+        }
+
+        /* Carousel prev and next buttons */
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 15px;
+            width: 40px;
+            height: 40px;
+        }
+        .carousel-control-prev{
+            left: 10px;
+        }
+        .carousel-control-next {
+            right: 10px;
+        }
+
+        
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+        }
+
+        /* Optional: Add shadow to make buttons stand out */
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        /* Style for the sub-images inside the modal */
+
+
+/* Adjust modal footer for button alignment */
+.modal-footer {
+   float: left;
+    justify-content: space-between;
+}
+
+        
+    </style>
+</head>
+<body>
+
+    
+        <!-- Navbar -->
+         <div class="nav-parent">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custome">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Brand</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </nav>
+        </div>
+
+
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide carousel-container" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Carousel Items with Images -->
+                    <div class="carousel-item active">
+                        <img src="image/banner-image-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image/banner-image-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="image/banner-image-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+
+                
+            </div>
+            
+
+
+            <section class="py-5 new-product">
+                <div class="container">
+                  <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="mb-0">Newly Arrived Brands</h2>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">View All Categories →</a>
+                  </div>
+                  <div class="scroll-container row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 new-products">
+                    
+                  </div>
+                </div>
+            </section>
+
+            <!--Best selling-->
+            <div class="container my-4 Best-selling">
+
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="mb-0">Newly Arrived Brands</h2>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">View All Categories →</a>
+                  </div>
+                <div class="scroll-container row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 best-selling">
+                    <!-- Product Card -->
+                    
+                <!-- Repeat above card structure for more products -->
+                </div>
+            </div>
+              
+    
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    
+</body>
+</html>
