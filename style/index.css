@@ -1,0 +1,170 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Siemreap&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        * {
+            font-family: "Poppins", serif;
+        }
+
+        .home-page{
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(0, 0, 0);
+        }
+        .navbar-custome{
+            width: 70%;
+            height: 60px;
+            margin: auto;
+        }
+        
+        .nav-parent{
+            width: 100%;
+            background-color: white;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            
+        }
+
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .Best-selling{
+            width: 70dvw;
+            margin: auto;
+        }
+
+        
+
+        /* Carousel container */
+        .carousel-container {
+            width: 100%;
+            height: 650px;
+            margin-top: 60px;
+        }
+        .carousel-inner {
+            width: 70%;
+            max-height: 100%;
+            margin: auto;
+        }
+        .carousel-inner .carousel-item {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Carousel item styling */
+        .carousel-item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .category, .new-product {
+            width: 70%;
+            margin: auto;
+        }
+       
+
+        /* Adjust carousel for small screens */
+        @media (max-width: 768px) {
+            .home-page{
+                height: fit-content;
+            }
+            .navbar-custome{
+                width: 100%;
+            }
+            .carousel-container {
+                width: 100%;
+                height: 40vh;
+                padding: 0;
+            }
+            .carousel-inner{
+                width: 100%;
+            }
+            .Best-selling{
+                width: 100%;
+            }
+            .new-product{
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .carousel-container {
+                width: 100%;
+                height: 30vh;
+            }
+
+        }
+
+        /* Carousel indicators styling */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px; /* Position it at the bottom of the carousel */
+            left: 50%;
+        }
+
+        .carousel-indicators button {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .carousel-indicators .active {
+            background-color: rgba(255, 255, 255, 1); /* Solid white for active indicator */
+        }
+
+        .carousel-indicators button:hover {
+            background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+            transform: scale(1.2); /* Enlarge on hover */
+        }
+
+        /* Carousel prev and next buttons */
+        .carousel-control-prev,
+        .carousel-control-next {
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 15px;
+            width: 40px;
+            height: 40px;
+        }
+        .carousel-control-prev{
+            left: 10px;
+        }
+        .carousel-control-next {
+            right: 10px;
+        }
+
+        
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+        }
+
+        /* Optional: Add shadow to make buttons stand out */
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        /* Style for the sub-images inside the modal */
+
+
+/* Adjust modal footer for button alignment */
+.modal-footer {
+   float: left;
+    justify-content: space-between;
+}
+
+.card-title {
+    font-size: 20px;
+}

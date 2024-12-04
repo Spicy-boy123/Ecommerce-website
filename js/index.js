@@ -24,49 +24,57 @@ const newProducts = [
       description: "Honey best nectar you wish to get"
     }
   ];
-const bestSellingProducts = [
+  const bestSellingProducts = [
     {
-      id: 11,
-      image: "image/product-thumb-11.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
+        id: 11,
+        image: "image/product-thumb-11.jpg",
+        title: "Premium Honey Jar",
+        description: "Honey best nectar you wish to get",
+        price: 12.99
     },
     {
-      id: 12,
-      image: "image/product-thumb-12.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
+        id: 12,
+        image: "image/product-thumb-12.jpg",
+        title: "Golden Amber Jar",
+        description: "Honey best nectar you wish to get",
+        price: 15.49
     },
     {
-      id: 13,
-      image: "image/product-thumb-13.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
+        id: 13,
+        image: "image/product-thumb-13.jpg",
+        title: "Organic Honey Jar",
+        description: "Honey best nectar you wish to get",
+        price: 10.99
     },
     {
-      id: 14,
-      image: "image/product-thumb-14.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
-    },{
+        id: 14,
+        image: "image/product-thumb-14.jpg",
+        title: "Natural Amber Jar",
+        description: "Honey best nectar you wish to get",
+        price: 13.49
+    },
+    {
         id: 15,
-      image: "image/product-thumb-1.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
-    }
-    ,{
+        image: "image/product-thumb-1.jpg",
+        title: "Classic Honey Jar",
+        description: "Honey best nectar you wish to get",
+        price: 9.99
+    },
+    {
         id: 16,
-      image: "image/product-thumb-2.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
-    }
-    ,{
+        image: "image/product-thumb-2.jpg",
+        title: "Amber Honey Delight",
+        description: "Honey best nectar you wish to get",
+        price: 14.99
+    },
+    {
         id: 17,
-      image: "image/product-thumb-3.jpg",
-      title: "Amber Jar",
-      description: "Honey best nectar you wish to get"
+        image: "image/product-thumb-3.jpg",
+        title: "Sweet Amber Jar",
+        description: "Honey best nectar you wish to get",
+        price: 11.49
     }
-  ];
+];
 
   
   const productList = document.querySelector('.new-products');
@@ -77,13 +85,19 @@ const bestSellingProducts = [
     newProducts.forEach(e => {
         
         productHtml+=`
-                    <div class="col">
-                      <div class="category-card bg-white p-3 h-100">
-                        <img src="${e.image}" alt="Product 1" class="img-fluid rounded mb-3">
-                        <h6 class="fw-bold mb-1">${e.title}</h6>
-                        <p class="text-muted mb-0">${e.description}</p>
-                      </div>
-                    </div>`;
+                    <div class="col-md-4">
+                <div class="card">
+                    <img src="${e.image}" class="card-img-top" alt="${e.title}">
+                    <div class="card-body">
+                        <h5 style="font-size: 16px;">${e.title}</h5>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <p class="card-text"><strong>$10.99</strong></p>
+                            <!-- View Details Button, trigger modal -->
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>`;
 
     });
     productList.innerHTML = productHtml;
@@ -96,10 +110,9 @@ const bestSellingProducts = [
                 <div class="card">
                     <img src="${e.image}" class="card-img-top" alt="${e.title}">
                     <div class="card-body">
-                        <h5 class="card-title">${e.title}</h5>
-                        <p class="card-text">${e.description}</p>
+                        <h5 style="font-size: 16px;">${e.title}</h5>
                         <div class="d-flex justify-content-between align-items-center">
-                            <p class="card-text"><strong>$19.99</strong></p>
+                            <p class="card-text"><strong>$${e.price}</strong></p>
                             <!-- View Details Button, trigger modal -->
                             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#productModal${index}">View Details</button>
                         </div>
@@ -122,7 +135,7 @@ const bestSellingProducts = [
                                 </div>
                                 <div class="col-md-7 d-flex">
                                     <div>
-                                        <p><strong>Price:</strong> $19.99</p>
+                                        <p><strong>Price:</strong> $${e.price}</p>
                                         <p><strong>Description:</strong> ${e.description}</p>
                                     </div>
                                 </div>
